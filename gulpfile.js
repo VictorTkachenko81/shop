@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 gulp.task('less', function() {
     return gulp.src([
             'web-src/less/*.less',
+            'web-src/css/*.css',
             'bower_components/bootstrap/less/bootstrap.less'
         ])
         .pipe(less({compress: true}))
@@ -13,9 +14,9 @@ gulp.task('less', function() {
 });
 gulp.task('images', function () {
     return gulp.src([
-            'web-src/media/**/*'
+            'web-src/images/**/*'
         ])
-        .pipe(gulp.dest('web/media/'))
+        .pipe(gulp.dest('web/images/'))
 });
 gulp.task('fonts', function () {
     return gulp.src([
