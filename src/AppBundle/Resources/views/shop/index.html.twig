@@ -1,38 +1,11 @@
-{% extends 'AppBundle::base.html.twig' %}
+{% extends 'AppBundle:shop:2-columns.html.twig' %}
 
-{% block meta %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% block before_content %}
+    {{ include( 'AppBundle:shop:index/slider.html.twig' ) }}
 {% endblock %}
 
-{% block title %}Home | E-Shopper{% endblock %}
-
-{% block stylesheets %}
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/prettyPhoto.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/price-range.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-    <!--[if lt IE 9]>
-        <script src="{{ asset('js/html5shiv.js') }}"></script>
-        <script src="{{ asset('js/respond.min.js') }}"></script>
-    <![endif]-->
-{% endblock %}
-
-{% block body %}
-    {{ include( 'AppBundle:shop:default/header.html.twig' ) }}
-    {% block before_content %}{% endblock %}
-    {% block body_content %}{% endblock %}
-    {{ include( 'AppBundle:shop:default/footer.html.twig' ) }}
-{% endblock %}
-
-{% block javascripts %}
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{ asset('js/price-range.js') }}"></script>
-    <script src="{{ asset('js/jquery.prettyPhoto.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+{% block content %}
+    {{ include( 'AppBundle:shop:index/featured_items.html.twig' ) }}
+    {{ include( 'AppBundle:shop:index/category_tab.html.twig' ) }}
+    {{ include( 'AppBundle:shop:index/recommended_items.html.twig' ) }}
 {% endblock %}
